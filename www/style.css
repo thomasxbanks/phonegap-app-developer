@@ -17,7 +17,16 @@ body {
 }
 
 header {
-  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+
+#logo-az {
+  display: inline-block;
+  vertical-align: middle;
+  min-height: 3rem;
 }
 
 h1 {
@@ -26,11 +35,34 @@ h1 {
   margin: 0;
   font-size: 5rem;
   font-weight: 100;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+h1:after {
+  content: "";
+  background-color: #fafaf0;
+  height: 0.0625rem;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: ease 300ms;
+}
+
+h1[data-active="true"]:after {
+  width: 100%;
 }
 
 main {
   max-width: 65ch;
   padding: 0 1rem;
+}
+
+nav {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 nav ul {
@@ -39,15 +71,14 @@ nav ul {
   align-items: space-around;
   max-width: 65ch;
   margin: 0;
-  padding: 1rem 1rem 2rem 1rem;
 }
 
 nav ul li a {
   display: block;
   padding: 1rem;
   border-radius: 0.25rem;
-  background-color: goldenrod;
-  color: white;
+  background-color: #FAB000;
+  color: #151924;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;

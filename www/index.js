@@ -1,3 +1,4 @@
+const title = document.querySelector('h1')
 const main = document.querySelector('main')
 
 const content = [
@@ -15,3 +16,7 @@ const content = [
 ]
 
 content.map(p => main.innerHTML += p)
+
+window.addEventListener('deviceready', () => {
+  h1.dataset.active = true
+})
