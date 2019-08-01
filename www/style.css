@@ -18,14 +18,14 @@ body {
 
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.0625);
 }
 
 #logo-az {
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   min-height: 3rem;
 }
 
