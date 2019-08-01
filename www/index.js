@@ -1,6 +1,10 @@
 const title = document.querySelector('h1')
 const main = document.querySelector('main')
 
+const deviceReady = () => {
+  title.dataset.active = true
+}
+
 const content = [
   `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
   `<p>Cumque quas nemo mollitia iste alias? Enim nulla nobis ea, quo reiciendis sit nam! Quibusdam est possimus hic minima quam facilis nulla vel. Officiis veniam iusto voluptatibus est ipsum voluptas?</p>`,
@@ -17,6 +21,5 @@ const content = [
 
 content.map(p => main.innerHTML += p)
 
-document.addEventListener('deviceready', () => {
-  h1.dataset.active = true
-})
+document.addEventListener('deviceready', deviceReady, false)
+
