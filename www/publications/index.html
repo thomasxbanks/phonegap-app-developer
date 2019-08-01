@@ -8,119 +8,241 @@
   <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
   <meta name="application-name" content="AZ Respiratory Resource Tool" data-name="cooper-az-respitool" data-version="1.0.0" />
   <title>AZ Respiratory Resource Tool</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../fonts/stylesheet.css">
 </head>
-<body data-colorscheme="dark" data-page="homepage">
-  <div class="homepage_content" data-active="false">
-    <svg class="company-logo icon__inline-svg">
-      <use xlink:href="#logo-az" role="presentation"></use>
-    </svg>
-
-    <header class="masthead">
-      <a href="/" title="Home">
-        <svg class="company-logo icon__inline-svg">
-          <use xlink:href="#logo-az" role="presentation"></use>
-        </svg>
-      </a>
-      <span>
+<body data-colorscheme="" data-page="publications">
+  <header class="masthead">
+    <a href="/" title="Home">
+      <svg class="company-logo icon__inline-svg">
+        <use xlink:href="#logo-az" role="presentation"></use>
+      </svg>
+    </a>
+    <span>
+      <svg class="icon__inline-svg">
+        <use xlink:href="#logo-reframing" role="presentation"></use>
+      </svg>
+    </span>
+    <button data-action="toggle-nav" data-active="false" aria-label="Toggle menu">
+      <span data-hamburger class="icon">
         <svg class="icon__inline-svg">
-          <use xlink:href="#logo-reframing" role="presentation"></use>
+          <use xlink:href="#icon-nav" role="presentation"></use>
         </svg>
       </span>
-      <button data-action="toggle-nav" data-active="false" aria-label="Toggle menu">
-        <span data-hamburger class="icon">
-          <svg class="icon__inline-svg">
-            <use xlink:href="#icon-nav" role="presentation"></use>
-          </svg>
-        </span>
-        <span data-close class="icon">
-          <svg class="icon__inline-svg">
-            <use xlink:href="#icon-close" role="presentation"></use>
-          </svg>
-        </span>
-      </button>
-      <nav class="primary-navigation" data-active="false" data-target="primary-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="reframing-respiratory-care/index.html">Reframing Respiratory Care</a></li>
-          <li><a href="severe-asthma/index.html">Severe Asthma</a></li>
-          <li><a href="moderate-severe-asthma/index.html">Moderate/Severe Asthma</a></li>
-          <li><a href="mild-asthma/index.html">Mild Asthma</a></li>
-          <li><a href="publications/index.html">Publications</a></li>
-        </ul>
-      </nav></header>
-    <script>
-      const button = document.querySelector('[data-action="toggle-nav"]')
-      const nav = document.querySelector('[data-target="primary-nav"]')
-      button.addEventListener('click', () => {
-        const currentNavState = nav.dataset.active
-        button.dataset.active = currentNavState === 'true' ? 'false' : 'true'
-        nav.dataset.active = currentNavState === 'true' ? 'false' : 'true'
-        document.documentElement.style.overflow = currentNavState === 'true' ? '' : 'hidden'
-      })
-    </script>    <div class="grid">
-      <img src="images/homepage.png" alt="Respiratory" />
+      <span data-close class="icon">
+        <svg class="icon__inline-svg">
+          <use xlink:href="#icon-close" role="presentation"></use>
+        </svg>
+      </span>
+    </button>
+    <nav class="primary-navigation" data-active="false" data-target="primary-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="../reframing-respiratory-care/index.html">Reframing Respiratory Care</a></li>
+        <li><a href="../severe-asthma/index.html">Severe Asthma</a></li>
+        <li><a href="../moderate-severe-asthma/index.html">Moderate/Severe Asthma</a></li>
+        <li><a href="../mild-asthma/index.html">Mild Asthma</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+      </ul>
+    </nav></header>
+  <script>
+    const button = document.querySelector('[data-action="toggle-nav"]')
+    const nav = document.querySelector('[data-target="primary-nav"]')
+    button.addEventListener('click', () => {
+      const currentNavState = nav.dataset.active
+      button.dataset.active = currentNavState === 'true' ? 'false' : 'true'
+      nav.dataset.active = currentNavState === 'true' ? 'false' : 'true'
+      document.documentElement.style.overflow = currentNavState === 'true' ? '' : 'hidden'
+    })
+  </script>  <div class="publications_grid">
+    <main class="content"><header class="page_header-tertiary">
+  <h1 class="title">
+    Publications
+  </h1>
+</header><div class="data_table">
+  <div class="heading">
+    <div class="grid">
+      <div>Disease area
+        <button data-action="toggle-sort" data-active="false">
+          <div class="icon">
+            <svg class="icon__inline-svg">
+              <use xlink:href="#icon-arrow" role="presentation"></use>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div>Compound</div>
+      <div>Publication</div>
     </div>
   </div>
-  <footer class="colophon">
-    <p>&copy;2019 AstraZeneca. All rights reserved.</p>
-    <p>Document Number xx-xxxx-xxx-xxxx</p>
-    <p>Approval Date: x/19 Expiration Date: x/xx</p>
-  </footer>
-  <div class="references_container">
-    <button data-action="open-modal">References</button>
-    <div class="references" data-active="false">
-      <div class="grid">
-        <div class="references_content">
-          <button data-action="close-modal" aria-label="Close references">
-            <span data-close class="icon">
-              <svg class="icon__inline-svg">
-                <use xlink:href="#icon-close" role="presentation"></use>
-              </svg>
-            </span>
-          </button>
-          <header class="page_header-primary">
-            <h1 class="title">
-              References
-            </h1>
-          </header>
-          <ol>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatibus corporis quo.</li>
-            <li>Voluptatum pariatur quisquam nostrum facere perferendis nisi aliquid laudantium repudiandae consectetur hic.</li>
-            <li>Tenetur, laboriosam illo? Molestiae, modi harum. Recusandae nihil nam itaque mollitia distinctio.</li>
-            <li>Sed voluptatum cumque officia corrupti facilis nisi dolor sapiente minus facere saepe.</li>
-            <li>Odit debitis fuga quibusdam nulla in. Facere accusamus sint consequuntur laudantium voluptate?</li>
-            <li>Rem voluptatum cum ab incidunt? Rerum quo non quibusdam eaque error rem.</li>
-            <li>Est error illo aliquid nisi architecto nostrum commodi itaque maxime perferendis sapiente.</li>
-            <li>Maxime repellendus magnam quia tempora sint autem nihil laboriosam dolorem quisquam mollitia.</li>
-            <li>Recusandae, blanditiis. Sint reprehenderit at sed eligendi, quis provident cum expedita tenetur!</li>
-            <li>Est, vitae iure ea nesciunt architecto aliquam natus libero consequuntur voluptatum accusantium!</li>
-            <li>Eveniet doloremque provident nulla molestiae aliquam enim et ut eligendi non rem!</li>
-            <li>Autem eius neque iste distinctio nostrum deserunt. At molestias ab provident corporis.</li>
-            <li>Fuga, consequatur autem! Id laudantium beatae porro illum incidunt magni, tempore quo.</li>
-            <li>Ipsum at natus commodi odit, quidem dolorum rerum et est voluptas! Nihil!</li>
-            <li>Assumenda consequuntur nostrum asperiores veniam necessitatibus numquam nesciunt qui ipsum nobis dignissimos?</li>
-            <li>Recusandae veritatis sint accusamus perferendis. Odio ipsam voluptatum cupiditate cum nobis quis.</li>
-            <li>Culpa quam quis placeat, iste in ipsam amet voluptatibus laborum earum quisquam.</li>
-          </ol>
-        </div>
-      </div>
-      <script>
-        let modal = document.querySelector('.references')
-        const closeModalButton = modal.querySelector('[data-action="close-modal"]')
-        closeModalButton.addEventListener('click', () => {
-          modal.dataset.active = false
-        })
-      </script>
-    </div>  <script>
-      let references = document.querySelector('.references')
-      const openModalButton = document.querySelector('[data-action="open-modal"]')
-      openModalButton.addEventListener('click', () => {
-        modal.dataset.active = true
+  <div class="severe-asthma" data-sort="Severe asthma">
+    <div class="grid">
+      <div>Severe asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="severe-asthma" data-sort="Severe asthma">
+    <div class="grid">
+      <div>Severe asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="hidden" data-sort="Severe asthma" data-active="false" data-target="Cupiditate">
+    <div class="grid">
+      <div>Severe asthma</div>
+      <div>Tezepelumab</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="hidden" data-sort="Severe asthma" data-active="false" data-target="budesonide-formoterol">
+    <div class="grid">
+      <div>Severe asthma</div>
+      <div>Budesonide/ Formoterol</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="moderate-severe-asthma" data-sort="Moderate/Severe asthma">
+    <div class="grid">
+      <div>Moderate/Severe asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="moderate-severe-asthma" data-sort="Moderate/Severe asthma">
+    <div class="grid">
+      <div>Moderate/Severe asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="hidden" data-sort="Severe asthma" data-active="false" data-target="tezepelumab">
+    <div class="grid">
+      <div>Severe asthma</div>
+      <div>Tezepelumab</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="mild-asthma" data-sort="Mild asthma">
+    <div class="grid">
+      <div>Mild asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+  <div class="mild-asthma" data-sort="Mild asthma">
+    <div class="grid">
+      <div>Mild asthma</div>
+      <div>Cupiditate</div>
+      <div><strong>Lorem</strong> ipsum dolor sit amet consectetur adipisicing elit. Voluptas facilis, iste saepe ea odio a labore atque distinctio molestias vel.</div>
+    </div>
+  </div>
+</div>
+</main>
+  </div>
+  <div class="grid">
+    <div class="footer_container">
+      <footer class="colophon">
+        <p>&copy;2019 AstraZeneca. All rights reserved.</p>
+        <p>Document Number xx-xxxx-xxx-xxxx</p>
+        <p>Approval Date: x/19 Expiration Date: x/xx</p>
+      </footer>
+      <div class="references_container">
+        <button data-action="open-modal">References</button>
+        <div class="references" data-active="false">
+          <div class="grid">
+            <div class="references_content">
+              <button data-action="close-modal" aria-label="Close references">
+                <span data-close class="icon">
+                  <svg class="icon__inline-svg">
+                    <use xlink:href="#icon-close" role="presentation"></use>
+                  </svg>
+                </span>
+              </button>
+              <header class="page_header-primary">
+                <h1 class="title">
+                  References
+                </h1>
+              </header>
+              <ol>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatibus corporis quo.</li>
+                <li>Voluptatum pariatur quisquam nostrum facere perferendis nisi aliquid laudantium repudiandae consectetur hic.</li>
+                <li>Tenetur, laboriosam illo? Molestiae, modi harum. Recusandae nihil nam itaque mollitia distinctio.</li>
+                <li>Sed voluptatum cumque officia corrupti facilis nisi dolor sapiente minus facere saepe.</li>
+                <li>Odit debitis fuga quibusdam nulla in. Facere accusamus sint consequuntur laudantium voluptate?</li>
+                <li>Rem voluptatum cum ab incidunt? Rerum quo non quibusdam eaque error rem.</li>
+                <li>Est error illo aliquid nisi architecto nostrum commodi itaque maxime perferendis sapiente.</li>
+                <li>Maxime repellendus magnam quia tempora sint autem nihil laboriosam dolorem quisquam mollitia.</li>
+                <li>Recusandae, blanditiis. Sint reprehenderit at sed eligendi, quis provident cum expedita tenetur!</li>
+                <li>Est, vitae iure ea nesciunt architecto aliquam natus libero consequuntur voluptatum accusantium!</li>
+                <li>Eveniet doloremque provident nulla molestiae aliquam enim et ut eligendi non rem!</li>
+                <li>Autem eius neque iste distinctio nostrum deserunt. At molestias ab provident corporis.</li>
+                <li>Fuga, consequatur autem! Id laudantium beatae porro illum incidunt magni, tempore quo.</li>
+                <li>Ipsum at natus commodi odit, quidem dolorum rerum et est voluptas! Nihil!</li>
+                <li>Assumenda consequuntur nostrum asperiores veniam necessitatibus numquam nesciunt qui ipsum nobis dignissimos?</li>
+                <li>Recusandae veritatis sint accusamus perferendis. Odio ipsam voluptatum cupiditate cum nobis quis.</li>
+                <li>Culpa quam quis placeat, iste in ipsam amet voluptatibus laborum earum quisquam.</li>
+              </ol>
+            </div>
+          </div>
+          <script>
+            let modal = document.querySelector('.references')
+            const closeModalButton = modal.querySelector('[data-action="close-modal"]')
+            closeModalButton.addEventListener('click', () => {
+              modal.dataset.active = false
+            })
+          </script>
+        </div>  <script>
+          let references = document.querySelector('.references')
+          const openModalButton = document.querySelector('[data-action="open-modal"]')
+          openModalButton.addEventListener('click', () => {
+            modal.dataset.active = true
+          })
+        </script>
+      </div>    </div>
+  </div>
+  <script>
+    // Get the data table
+    const dataTable = document.querySelector('.data_table')
+    // Get the rows from the DOM
+    const rows = Array.from(dataTable.querySelectorAll('[data-sort]'))
+    // *************************************************** //
+    // Show the relevant hidden rows
+    // *************************************************** //
+    // Get the hidden rows
+    const hiddenRows = Array.from(dataTable.querySelectorAll('.hidden'))
+    // Get the rows to show from local storage
+    const rowsToShow = localStorage.rowsToShow ? JSON.parse(localStorage.rowsToShow) : null
+    console.log(rowsToShow, hiddenRows)
+    if (rowsToShow) {
+      console.log(rowsToShow)
+      rows.map(row => {
+        if (rowsToShow.indexOf(row.dataset.target) > -1) {
+          row.dataset.active = true
+        }
       })
-    </script>
-  </div>  <!-- build:phonegap -->
+    }
+    // *************************************************** //
+    // Sort the data rows
+    // *************************************************** //
+    // Get the toggle button
+    const toggleSort = dataTable.querySelector('[data-action="toggle-sort"]')
+    toggleSort.addEventListener('click', () => {
+      // Get the current state
+      const currentState = toggleSort.dataset.active === 'true' ? true : false
+      // Set the button state based on current state
+      toggleSort.dataset.active = !currentState
+      // Reorder the rows. Using .reverse() instead of .sort() to negate the need for a conditional
+      rows.reverse((a, b) => (a.dataset.sort > b.dataset.sort) ? 1 : ((b.dataset.sort > a.dataset.sort) ? -1 : 0))
+      // Remove existing rows
+      rows.map(row => row.outerHTML = ``)
+      // Render the new rows order on page
+      rows.map(row => dataTable.insertAdjacentElement('beforeend', row))
+      console.log(rows)
+    })
+  </script>
+  <!-- build:phonegap -->
   <!-- endbuild -->
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
   
@@ -208,7 +330,7 @@
     /* Lockr - Tracker.js dependency - https://github.com/tsironis/lockr */
     !function (e, t) { "undefined" != typeof exports ? "undefined" != typeof module && module.exports && (exports = module.exports = t(e, exports)) : "function" == typeof define && define.amd ? define(["exports"], function (r) { e.Lockr = t(e, r) }) : e.Lockr = t(e, {}) }(this, function (e, t) { "use strict"; return Array.prototype.indexOf || (Array.prototype.indexOf = function (e) { var t = this.length >>> 0, r = Number(arguments[1]) || 0; for ((r = r < 0 ? Math.ceil(r) : Math.floor(r)) < 0 && (r += t); r < t; r++)if (r in this && this[r] === e) return r; return -1 }), t.prefix = "", t._getPrefixedKey = function (e, t) { return (t = t || {}).noPrefix ? e : this.prefix + e }, t.set = function (e, t, r) { var o = this._getPrefixedKey(e, r); try { localStorage.setItem(o, JSON.stringify({ data: t })) } catch (r) { console && console.warn("Lockr didn't successfully save the '{" + e + ": " + t + "}' pair, because the localStorage is full.") } }, t.get = function (e, t, r) { var o, n = this._getPrefixedKey(e, r); try { o = JSON.parse(localStorage.getItem(n)) } catch (e) { o = localStorage[n] ? { data: localStorage.getItem(n) } : null } return o ? "object" == typeof o && void 0 !== o.data ? o.data : void 0 : t }, t.sadd = function (e, r, o) { var n, a = this._getPrefixedKey(e, o), i = t.smembers(e); if (i.indexOf(r) > -1) return null; try { i.push(r), n = JSON.stringify({ data: i }), localStorage.setItem(a, n) } catch (t) { console.log(t), console && console.warn("Lockr didn't successfully add the " + r + " to " + e + " set, because the localStorage is full.") } }, t.smembers = function (e, t) { var r, o = this._getPrefixedKey(e, t); try { r = JSON.parse(localStorage.getItem(o)) } catch (e) { r = null } return r && r.data ? r.data : [] }, t.sismember = function (e, r, o) { return t.smembers(e).indexOf(r) > -1 }, t.keys = function () { var e = [], r = Object.keys(localStorage); return 0 === t.prefix.length ? r : (r.forEach(function (r) { -1 !== r.indexOf(t.prefix) && e.push(r.replace(t.prefix, "")) }), e) }, t.getAll = function (e) { var r = t.keys(); return e ? r.reduce(function (e, r) { var o = {}; return o[r] = t.get(r), e.push(o), e }, []) : r.map(function (e) { return t.get(e) }) }, t.srem = function (e, r, o) { var n, a, i = this._getPrefixedKey(e, o), c = t.smembers(e, r); (a = c.indexOf(r)) > -1 && c.splice(a, 1), n = JSON.stringify({ data: c }); try { localStorage.setItem(i, n) } catch (t) { console && console.warn("Lockr couldn't remove the " + r + " from the set " + e) } }, t.rm = function (e) { var t = this._getPrefixedKey(e); localStorage.removeItem(t) }, t.flush = function () { t.prefix.length ? t.keys().forEach(function (e) { localStorage.removeItem(t._getPrefixedKey(e)) }) : localStorage.clear() }, t });
   </script>
-  <script src="js/bundle.js"></script>
+  <script src="../js/bundle.js"></script>
 </body>
 
 
