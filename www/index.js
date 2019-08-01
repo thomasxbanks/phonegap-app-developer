@@ -17,6 +17,6 @@ const content = [
 
 content.map(p => main.innerHTML += p)
 
-window.addEventListener('deviceready', () => {
+document.addEventListener('deviceready', () => {
   h1.dataset.active = true
 })
