@@ -45,10 +45,7 @@ const onResume = () => {
 const onDeviceReady = () => {
   
   const content = [
-    `<video autoplay muted loop poster="./images/stat_01.png">
-      <source src="./videos/stat_01.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>`,
+    `<video poster="./images/stat_01.png"><source src="./videos/stat_01.mp4" type="video/mp4"><source src="./videos/stat_01.mov" type="video/mov">Your browser does not support the video tag.</video>`,
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
     `<p>Cumque quas nemo mollitia iste alias? Enim nulla nobis ea, quo reiciendis sit nam! Quibusdam est possimus hic minima quam facilis nulla vel. Officiis veniam iusto voluptatibus est ipsum voluptas?</p>`,
     `<p>Doloribus velit dolores perspiciatis optio at, animi a temporibus autem cum quis aperiam, ab dolor nesciunt modi repellat veritatis ipsam consequuntur adipisci aliquam ea molestias reiciendis! Ducimus fugiat minus tenetur!</p>`,

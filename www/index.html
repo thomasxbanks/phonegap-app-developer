@@ -28,15 +28,15 @@
     </svg>
     <nav>
       <ul>
-        <li><a data-active="true" href="./index.html">Home page</a></li>
-        <li><a href="./other.html">Other page</a></li>
+        <li><a class="button" data-active="true" href="./index.html">Home page</a></li>
+        <li><a class="button" href="./other.html">Other page</a></li>
+        <li><button class="button" onClick="onPause()">Pause</button></li>
+        <li><button class="button" onClick="onResume()">Resume</button></li>
       </ul>
     </nav>
   </header>
   <main>
     <h1 data-active="false">Thom's awesome App</h1>
-    <button onClick="onPause()">Pause</button>
-    <button onClick="onResume()">Resume</button>
     <div class="content_wrapper"></div>
   </main>
   <footer>&copy; 2019 LxLabs</footer>
