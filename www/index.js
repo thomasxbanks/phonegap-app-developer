@@ -3,11 +3,13 @@ const title = main.querySelector('h1')
 
 const onPause = () => {
     document.body.style.background = `dodgerblue`
+    title.dataset.active = false
 }
 
 const onResume = () => {
   setTimeout(() => {
     document.body.style.background = `tomato`
+    title.dataset.active = true
   }, 2000)
 }
 
