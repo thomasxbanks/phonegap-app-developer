@@ -43,7 +43,7 @@ const onResume = () => {
 }
 
 const onDeviceReady = () => {
-  
+  Array.from(document.querySelectorAll('nav button')).map(button => button.remove())
   const content = [
     `<video playsinline poster="./images/stat_01.png"><source src="./videos/stat_01.mp4" type="video/mp4"><source src="./videos/stat_01.mov" type="video/mov">Your browser does not support the video tag.</video>`,
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
@@ -55,7 +55,7 @@ const onDeviceReady = () => {
     `<p>Porro ab ea, consequatur omnis, odit recusandae libero quae repellat pariatur asperiores non tempore. Animi consequatur quam similique, magnam officiis neque eaque excepturi. Eveniet laborum non eaque, incidunt accusantium veniam!</p>`,
     `<p>Voluptate quibusdam animi doloremque odio voluptatum harum quia unde quos, cum maiores dolores soluta esse sapiente facere magnam. Vitae itaque obcaecati necessitatibus et inventore nesciunt maiores dolorum cumque ut autem?</p>`,
     `<p>Nihil, mollitia odio corrupti consequatur distinctio ab blanditiis itaque quisquam, dolorum labore sit, nisi dolore veritatis aut. Aut earum eveniet rerum. Fuga quasi quos fugiat obcaecati facere consequatur eum quaerat.</p>`,
-    `<figure><img data-src="https://media0.giphy.com/media/zQfX46nOhYzjG/giphy.gif?cid=790b76115d4837b277576d3059144ad5&rid=giphy.gif" /><figcaption>You want a hug?</figcaption></figure>`,
+    `<figure><img data-src="./images/hug.gif" /><figcaption>You want a hug?</figcaption></figure>`,
     `<p>Modi assumenda, iure ipsum veniam, aut libero doloremque impedit molestiae repudiandae quis praesentium optio possimus. Quasi voluptatibus fugit minima neque. Sit laborum autem minima nostrum veniam deserunt, aut id corrupti.</p>`,
   ]
   
@@ -72,7 +72,7 @@ const onLoad = () => {
   const footerHeight = window.getComputedStyle(footer, null).getPropertyValue('height')
   main.style.minHeight = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
   document.addEventListener('deviceready', onDeviceReady, false)
-  onDeviceReady()
+  // onDeviceReady()
 }
 
 document.addEventListener("pause", onPause, false);
