@@ -3,6 +3,7 @@ const title = main.querySelector('h1')
 
 const onDeviceReady = () => {
   console.info('deviceready')
+  document.body.style.background = `lime`
   
   
   const content = [
@@ -24,5 +25,6 @@ const onDeviceReady = () => {
 
 const onLoad = () => {
   console.info('loaded')
+  document.body.style.background = `red`
   document.addEventListener('deviceready', onDeviceReady, true)
 }
