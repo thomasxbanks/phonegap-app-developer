@@ -83,10 +83,16 @@ nav ul li a {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
+  margin: 0.125rem;
 }
 
 nav ul li:not(:first-of-type) {
   margin-left: 1rem;
+}
+
+nav ul li a[data-active="true"] {
+  border: 0.125rem solid dodgerblue;
+  margin: 0;
 }
 
 p {
