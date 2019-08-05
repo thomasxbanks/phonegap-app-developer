@@ -8,7 +8,7 @@ const typewriter = (el) => {
   const inputArr = text.split('')
   const len = inputArr.length - 1
   let count = 0
-  const delay = Math.random() * 150
+  const delay = (1000 / len)
   el.dataset.content = text
   el.innerHTML = ''
   const interval = setInterval(() => {
