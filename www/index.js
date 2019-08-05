@@ -1,13 +1,10 @@
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
-const main = document.querySelector('main')
+const main = document.querySelector('.content_wrapper')
 const title = document.querySelector('h1')
 
 const typewriter = (el) => {
-  console.log(`typewriter`, el)
-  footer.innerHTML += `<p>typewriter</p>`
   const text = el.innerHTML
-  el.dataset.content = text
   const inputArr = text.split('')
   const len = inputArr.length - 1
   let count = 0
@@ -18,47 +15,33 @@ const typewriter = (el) => {
       clearInterval(interval)
     }
     el.innerHTML += inputArr[count++]
-    console.log(el.innerHTML)
   }, delay)
 }
 
 const fadeIn = (el) => {
-  console.log(`fadeIn`, el)
-  footer.innerHTML += `<p>fadeIn</p>`
   el.dataset.active = true
 }
 
 const resetAnimation = (el) => {
-  console.log(`resetAnimation`, el)
   el.dataset.active = false
 }
 
 const runAnimation = (el) => {
-  console.log(`runAnimation`, el)
-  footer.innerHTML += `<p>runAnimation</p>`
   fadeIn(el)
   typewriter(el)
 }
 
 const onPause = () => {
-  console.log(`onPause`)
-  document.body.style.background = `alicewhite`
   resetAnimation(title)
 }
 
 const onResume = () => {
-  console.log(`onResume`)
   setTimeout(() => {
-    document.body.style.background = `maroon`
-    fadeIn(title)
     runAnimation(title)
   }, 2000)
 }
 
 const onDeviceReady = () => {
-  console.log('deviceready')
-  document.body.style.background = ``
-  fadeIn(title)
   runAnimation(title)
   
   const content = [
@@ -81,12 +64,11 @@ const onDeviceReady = () => {
 
 const onLoad = () => {
   console.log('loaded')
-  document.body.style.background = `wheat`
   const headerHeight = window.getComputedStyle(header, null).getPropertyValue('height')
   const footerHeight = window.getComputedStyle(footer, null).getPropertyValue('height')
   main.style.minHeight = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
   document.addEventListener('deviceready', onDeviceReady, false)
-  footer.innerHTML += `<p>onload&hellip;</p><p>title.dataset.active = "${title.dataset.active}"</p>`
+  onDeviceReady()
 }
 
 document.addEventListener("pause", onPause, false);
