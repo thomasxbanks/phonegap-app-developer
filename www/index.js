@@ -1,9 +1,9 @@
 const main = document.querySelector('main')
 const title = main.querySelector('h1')
 
-const deviceReady = () => {
-  title.dataset.active = true
-}
+const onDeviceReady = () => {
+  console.info('deviceready')
+  
   
   const content = [
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
@@ -18,8 +18,11 @@ const deviceReady = () => {
     `<p>Nihil, mollitia odio corrupti consequatur distinctio ab blanditiis itaque quisquam, dolorum labore sit, nisi dolore veritatis aut. Aut earum eveniet rerum. Fuga quasi quos fugiat obcaecati facere consequatur eum quaerat.</p>`,
     `<p>Modi assumenda, iure ipsum veniam, aut libero doloremque impedit molestiae repudiandae quis praesentium optio possimus. Quasi voluptatibus fugit minima neque. Sit laborum autem minima nostrum veniam deserunt, aut id corrupti.</p>`,
   ]
-
+  
   content.map(p => main.innerHTML += p)
+}
 
-
-document.addEventListener('deviceready', deviceReady, false)
+const onLoad = () => {
+  console.info('loaded')
+  document.addEventListener('deviceready', onDeviceReady, true)
+}
