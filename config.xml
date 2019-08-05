@@ -12,6 +12,7 @@
     <preference name="fullscreen" value="true" />
     <preference name="orientation" value="landscape" />
     <preference name="target-device" value="tablet" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
     <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
         <true />
     </config-file>
