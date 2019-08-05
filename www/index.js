@@ -42,10 +42,9 @@ const onResume = () => {
   runAnimation(title)
 }
 
-const onDeviceReady = () => {
-  Array.from(document.querySelectorAll('nav button')).map(button => button.remove())
+const populate = () => {
   const content = [
-    `<video playsinline poster="./images/stat_01.png"><source src="./videos/stat_01.mp4" type="video/mp4"><source src="./videos/stat_01.mov" type="video/mov">Your browser does not support the video tag.</video>`,
+    `<div class="cutaway"><video playsinline loop muted poster="./images/stat_01.png"><source src="./videos/stat_01.mp4" type="video/mp4"><source src="./videos/stat_01.mov" type="video/mov">Your browser does not support the video tag.</video></div>`,
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
     `<p>Cumque quas nemo mollitia iste alias? Enim nulla nobis ea, quo reiciendis sit nam! Quibusdam est possimus hic minima quam facilis nulla vel. Officiis veniam iusto voluptatibus est ipsum voluptas?</p>`,
     `<p>Doloribus velit dolores perspiciatis optio at, animi a temporibus autem cum quis aperiam, ab dolor nesciunt modi repellat veritatis ipsam consequuntur adipisci aliquam ea molestias reiciendis! Ducimus fugiat minus tenetur!</p>`,
@@ -55,14 +54,16 @@ const onDeviceReady = () => {
     `<p>Porro ab ea, consequatur omnis, odit recusandae libero quae repellat pariatur asperiores non tempore. Animi consequatur quam similique, magnam officiis neque eaque excepturi. Eveniet laborum non eaque, incidunt accusantium veniam!</p>`,
     `<p>Voluptate quibusdam animi doloremque odio voluptatum harum quia unde quos, cum maiores dolores soluta esse sapiente facere magnam. Vitae itaque obcaecati necessitatibus et inventore nesciunt maiores dolorum cumque ut autem?</p>`,
     `<p>Nihil, mollitia odio corrupti consequatur distinctio ab blanditiis itaque quisquam, dolorum labore sit, nisi dolore veritatis aut. Aut earum eveniet rerum. Fuga quasi quos fugiat obcaecati facere consequatur eum quaerat.</p>`,
-    `<figure><img data-src="./images/hug.gif" /><figcaption>You want a hug?</figcaption></figure>`,
+    `<figure><img src="./images/hug.gif" /><figcaption>You want a hug?</figcaption></figure>`,
     `<p>Modi assumenda, iure ipsum veniam, aut libero doloremque impedit molestiae repudiandae quis praesentium optio possimus. Quasi voluptatibus fugit minima neque. Sit laborum autem minima nostrum veniam deserunt, aut id corrupti.</p>`,
   ]
   
   content.map(p => main.innerHTML += p)
-  
   video = document.querySelector('video')
-  
+}
+
+const onDeviceReady = () => {
+  Array.from(document.querySelectorAll('nav button')).map(button => button.remove())
   runAnimation(title)
 }
 
@@ -71,6 +72,7 @@ const onLoad = () => {
   const headerHeight = window.getComputedStyle(header, null).getPropertyValue('height')
   const footerHeight = window.getComputedStyle(footer, null).getPropertyValue('height')
   main.style.minHeight = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
+  populate()
   document.addEventListener('deviceready', onDeviceReady, false)
   // onDeviceReady()
 }
