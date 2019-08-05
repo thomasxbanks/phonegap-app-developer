@@ -9,6 +9,7 @@ const typewriter = (el) => {
   const len = inputArr.length - 1
   let count = 0
   const delay = Math.random() * 150
+  el.dataset.content = text
   el.innerHTML = ''
   const interval = setInterval(() => {
     if (count === len) {
@@ -23,10 +24,13 @@ const fadeIn = (el) => {
 }
 
 const resetAnimation = (el) => {
+  el.classList.remove('can-animate')
   el.dataset.active = false
+  el.innerHTML = el.dataset.content
 }
 
 const runAnimation = (el) => {
+  el.classList.add('can-animate')
   fadeIn(el)
   typewriter(el)
 }
