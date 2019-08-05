@@ -1,8 +1,10 @@
+const header = document.querySelector('header')
 const main = document.querySelector('main')
 const title = main.querySelector('h1')
 
 const onDeviceReady = () => {
   console.info('deviceready')
+  header.insertAdjacentHTML('afterend', `<p>deviceready</p>`)
   document.body.style.background = `lime`
   
   
@@ -25,6 +27,7 @@ const onDeviceReady = () => {
 
 const onLoad = () => {
   console.info('loaded')
+  header.insertAdjacentHTML('afterend', `<p>page loaded</p>`)
   document.body.style.background = `red`
   document.addEventListener('deviceready', onDeviceReady, true)
 }
