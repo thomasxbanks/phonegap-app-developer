@@ -44,19 +44,20 @@ h1 {
   font-weight: 100;
   position: relative;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   opacity: 0;
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  height: 8rem;
+  transition: ease-in 1000ms;
 }
 
-h1.can-animate {
-  transition: ease 900ms;
+h1.no-animation {
+  transition: none;
 }
 
-h1.can-animate:after {
-  transition: ease 300ms;
-  transition-delay: 600ms;
+h1.no-animation:after {
+  transition: none;
 }
 
 h1:after {
@@ -65,8 +66,10 @@ h1:after {
   height: 0.0625rem;
   width: 0;
   position: absolute;
-  bottom: 0;
+  bottom: -1rem;
   left: 0;
+  transition: ease 300ms;
+  transition-delay: 600ms;
 }
 
 h1[data-active="true"]:after {
@@ -75,13 +78,17 @@ h1[data-active="true"]:after {
 
 h1[data-active="true"] {
   opacity: 1;
-  width: 100%;
 }
 
 main {
   padding: 0 1rem;
   min-height: 100%;
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6));
+}
+
+video {
+  max-height: 100vh;
+  float: right;
 }
 
 nav {
