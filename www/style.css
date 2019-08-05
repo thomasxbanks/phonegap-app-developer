@@ -39,6 +39,8 @@ h1 {
   position: relative;
   padding-top: 2rem;
   padding-bottom: 1rem;
+  opacity: 0;
+  transition: opacity ease 1000ms 300ms;
 }
 
 h1:after {

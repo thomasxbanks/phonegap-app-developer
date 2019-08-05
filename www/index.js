@@ -1,11 +1,12 @@
+const header = document.querySelector('header')
 const main = document.querySelector('main')
 const title = main.querySelector('h1')
 
 const typewriter = (inputEl) => {
   const inputArr = inputEl.innerText.split('')
   const len = inputArr.length - 1
-  const delay = 300
   let count = 0
+  const delay = Math.random() * 150
   inputEl.innerHTML = ''
   const interval = setInterval(() => {
     if (count === len) {
@@ -16,13 +17,16 @@ const typewriter = (inputEl) => {
 }
 
 const runAnimation = () => {
+  title.style.opacity = 1
   typewriter(title)
-  title.dataset.active = true
+  setTimeout(() => {
+    title.dataset.active = true
+  }, 1000)
 }
 
 const onPause = () => {
-    document.body.style.background = `dodgerblue`
-    title.dataset.active = false
+  document.body.style.background = `dodgerblue`
+  title.dataset.active = false
 }
 
 const onResume = () => {
@@ -62,6 +66,8 @@ const onLoad = () => {
   console.info('loaded')
   document.body.style.background = `hotpink`
   document.addEventListener('deviceready', onDeviceReady, false)
+  const headerHeight = window.getComputedStyle(header, null).getPropertyValue('height')
+  main.style.height = `calc(100vh - ${headerHeight})`
 }
 
 
