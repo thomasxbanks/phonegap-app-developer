@@ -39,35 +39,42 @@ footer {
 
 h1 {
   font-family: "Montserrat", serif;
-  padding: 0;
-  margin: 0 0 3rem 0;
   font-size: 5rem;
   font-weight: 100;
   position: relative;
   padding-top: 2rem;
   padding-bottom: 1rem;
   opacity: 0;
-  transition: opacity ease 1000ms 300ms;
+  margin-top: 0;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  transition: opacity ease 900ms;
 }
 
 h1:after {
   content: "";
-  background-color: #fafaf0;
+  background-color: currentColor;
   height: 0.0625rem;
   width: 0;
   position: absolute;
   bottom: 0;
   left: 0;
   transition: ease 300ms;
+  transition-delay: 600ms;
 }
 
 h1[data-active="true"]:after {
   width: 100%;
 }
 
+h1[data-active="true"] {
+  opacity: 1;
+}
+
 main {
   padding: 0 1rem;
-  height: 100%;
+  min-height: 100%;
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6));
 }
 
