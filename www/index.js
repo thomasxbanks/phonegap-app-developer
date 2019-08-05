@@ -1,6 +1,25 @@
 const main = document.querySelector('main')
 const title = main.querySelector('h1')
 
+const typewriter = (inputEl) => {
+  const inputArr = inputEl.innerText.split('')
+  const len = inputArr.length - 1
+  const delay = 300
+  let count = 0
+  inputEl.innerHTML = ''
+  const interval = setInterval(() => {
+    if (count === len) {
+      clearInterval(interval)
+    }
+    inputEl.innerHTML += inputArr[count++]
+  }, delay)
+}
+
+const runAnimation = () => {
+  typewriter(title)
+  title.dataset.active = true
+}
+
 const onPause = () => {
     document.body.style.background = `dodgerblue`
     title.dataset.active = false
@@ -9,14 +28,14 @@ const onPause = () => {
 const onResume = () => {
   setTimeout(() => {
     document.body.style.background = `tomato`
-    title.dataset.active = true
+    runAnimation()
   }, 2000)
 }
 
 const onDeviceReady = () => {
   console.info('deviceready')
   document.body.style.background = `rebeccapurple`
-  title.dataset.active = true
+  runAnimation()
   
   const content = [
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
@@ -33,7 +52,7 @@ const onDeviceReady = () => {
   ]
   
   content.map(p => main.innerHTML += p)
-
+  
   document.addEventListener("pause", onPause, false);
   
   document.addEventListener("resume", onResume, false);
@@ -42,8 +61,7 @@ const onDeviceReady = () => {
 const onLoad = () => {
   console.info('loaded')
   document.body.style.background = `hotpink`
-
-    document.addEventListener('deviceready', onDeviceReady, false)
+  document.addEventListener('deviceready', onDeviceReady, false)
 }
 
 
