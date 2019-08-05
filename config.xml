@@ -13,12 +13,6 @@
     <preference name="orientation" value="landscape" />
     <preference name="target-device" value="tablet" />
     <preference name="AllowInlineMediaPlayback" value="true" />
-    <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
-        <true />
-    </config-file>
-    <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist">
-        <false />
-    </config-file>
     <gap:config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
         <true />
     </gap:config-file>
