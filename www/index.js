@@ -72,7 +72,7 @@ const onLoad = () => {
   const footerHeight = window.getComputedStyle(footer, null).getPropertyValue('height')
   main.style.minHeight = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
   document.addEventListener('deviceready', onDeviceReady, false)
-  onDeviceReady()
+  // onDeviceReady()
 }
 
 document.addEventListener("pause", onPause, false);
