@@ -58,6 +58,8 @@ h1[data-active="true"]:after {
 
 main {
   padding: 0 1rem;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6));
 }
 
 nav {
