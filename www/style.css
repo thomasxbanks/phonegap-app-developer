@@ -15,6 +15,7 @@ body {
   margin: 0;
   background-image: linear-gradient(45deg, #252934, #151924);
   color: #fafaf0;
+  transition: background ease 300ms;
 }
 
 header {
@@ -23,6 +24,12 @@ header {
   justify-content: space-between;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.0625);
+}
+
+footer {
+  background: #000;
+  color: white;
+  padding: 1rem;
 }
 
 #logo-az {

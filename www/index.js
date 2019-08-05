@@ -1,8 +1,10 @@
 const header = document.querySelector('header')
+const footer = document.querySelector('footer')
 const main = document.querySelector('main')
 const title = main.querySelector('h1')
 
 const typewriter = (inputEl) => {
+  footer.innerHTML += `<p>typewriter</p>`
   const inputArr = inputEl.innerText.split('')
   const len = inputArr.length - 1
   let count = 0
@@ -16,30 +18,40 @@ const typewriter = (inputEl) => {
   }, delay)
 }
 
-const runAnimation = () => {
-  title.style.opacity = 1
-  typewriter(title)
+const fadeIn = (el) => {
+  footer.innerHTML += `<p>fadeIn</p>`
+  el.style.opacity = 1
   setTimeout(() => {
-    title.dataset.active = true
+    el.dataset.active = true
   }, 1000)
+}
+const resetAnimation = (el) => {
+  el.style.opacity = 0
+  el.dataset.active = false
+}
+
+const runAnimation = (el) => {
+  footer.innerHTML += `<p>runAnimation</p>`
+  fadeIn(el)
+  typewriter(el)
 }
 
 const onPause = () => {
   document.body.style.background = `dodgerblue`
-  title.dataset.active = false
+  resetAnimation(title)
 }
 
 const onResume = () => {
   setTimeout(() => {
     document.body.style.background = `tomato`
-    runAnimation()
+    runAnimation(title)
   }, 2000)
 }
 
 const onDeviceReady = () => {
   console.info('deviceready')
   document.body.style.background = `rebeccapurple`
-  runAnimation()
+  runAnimation(title)
   
   const content = [
     `<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nostrum neque dicta corporis cupiditate ex? Pariatur error ipsum tenetur alias? Ipsa placeat exercitationem cumque maiores, facilis corporis iste earum mollitia!</p>`,
@@ -65,9 +77,10 @@ const onDeviceReady = () => {
 const onLoad = () => {
   console.info('loaded')
   document.body.style.background = `hotpink`
-  document.addEventListener('deviceready', onDeviceReady, false)
   const headerHeight = window.getComputedStyle(header, null).getPropertyValue('height')
-  main.style.height = `calc(100vh - ${headerHeight})`
+  const footerHeight = window.getComputedStyle(footer, null).getPropertyValue('height')
+  main.style.height = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
+  document.addEventListener('deviceready', onDeviceReady, false)
+  footer.innerHTML += `<p>title.dataset.active = "${title.dataset.active}"</p>`
+  runAnimation(title)
 }
-
-
