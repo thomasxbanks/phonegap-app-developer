@@ -12,15 +12,17 @@
     <preference name="fullscreen" value="true" />
     <preference name="orientation" value="landscape" />
     <preference name="target-device" value="tablet" />
-    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
-        <array>
-            <string>false</string>
-        </array>
+    <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
+        <true />
+    </config-file>
+    <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist">
+        <false />
+    </config-file>
+    <gap:config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
+        <true />
     </gap:config-file>
-    <gap:config-file platform="ios" parent="UIStatusBarHidden" overwrite="true">
-        <array>
-            <string>true</string>
-        </array>
+    <gap:config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist">
+        <false />
     </gap:config-file>
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.4.1" />
