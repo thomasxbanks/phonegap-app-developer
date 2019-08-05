@@ -74,7 +74,7 @@ const onLoad = () => {
   main.style.minHeight = `calc(100vh - ${headerHeight} - ${footerHeight} - 1rem)`
   populate()
   document.addEventListener('deviceready', onDeviceReady, false)
-  onDeviceReady()
+  // onDeviceReady()
 }
 
 document.addEventListener("pause", onPause, false);
